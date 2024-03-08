@@ -23,7 +23,7 @@ const SignUp = () => {
     } else if (pass !== cpass) {
       setError("Passwords are not the same");
     } else {
-      window.location.href = "/login";
+      window.location.href = window.location.origin + "/login";
     }
   };
   return (

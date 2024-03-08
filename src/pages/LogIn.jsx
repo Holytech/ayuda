@@ -11,7 +11,8 @@ const LogIn = () => {
     e.preventDefault();
     setError("");
     if (email && pass) {
-      window.location.href = "/profile";
+      // console.log("LOCATION >>>> " + window.location.origin +"/profile");
+      window.location.href = window.location.origin + "/profile";
     }
   };
   return (
