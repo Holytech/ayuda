@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { MdRemoveRedEye } from "react-icons/md";
 import { useState } from "react";
 
 const SignUp = () => {
+  const navigate = useNavigate();
+
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -23,7 +25,7 @@ const SignUp = () => {
     } else if (pass !== cpass) {
       setError("Passwords are not the same");
     } else {
-      window.location.href = window.location.origin + "/login";
+      navigate("/login");
     }
   };
   return (

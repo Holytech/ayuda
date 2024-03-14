@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { MdOutlineAlternateEmail, MdRemoveRedEye } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const LogIn = () => {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [error, setError] = useState("");
@@ -11,8 +13,7 @@ const LogIn = () => {
     e.preventDefault();
     setError("");
     if (email && pass) {
-      // console.log("LOCATION >>>> " + window.location.origin +"/profile");
-      window.location.href = window.location.origin + "/profile";
+      navigate("/profile");
     }
   };
   return (
